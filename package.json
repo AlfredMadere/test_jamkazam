@@ -1,0 +1,22 @@
+{
+  "name": "glg.it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
+  "scripts": {
+    "test": "jest",
+    "testwatch": "jest --watchAll"
+  },
+  "author": "Alfred Madere",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "faker": "^4.1.0",
+    "jest": "^25.2.7",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.1"
+  }
+}
