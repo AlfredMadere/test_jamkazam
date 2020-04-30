@@ -23,9 +23,18 @@ describe('jamkazam', () => {
 
 //only pases in non headless mode
 
+  
   it('can visit jamkazam.com', async() => {
-   await page.waitForSelector('a.join-today');
+    await page.waitForSelector('a.join-today');
+    await page.click('div.span10 [href="/products/platform"]');
+    await page.waitForSelector('div.after-black-bar-border');
   });
+
+
+
+
+
+
 
 });
 
