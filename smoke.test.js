@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer');
 
-
 describe('jamkazam', () => {
 	jest.setTimeout(30000);
   beforeEach(async () => {
@@ -9,7 +8,7 @@ describe('jamkazam', () => {
   });
 
   it('can visit jamkazam.com', async() => {
-	await page.waitForSelector('a.join-today');
+	  await page.waitForSelector('a.join-today');
+  });
 
 });
-

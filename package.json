@@ -13,6 +13,7 @@
   "author": "Alfred Madere",
   "license": "ISC",
   "dependencies": {
+    "promise.any": "",
     "axios": "^0.19.2",
     "faker": "^4.1.0",
     "jest": "^25.2.7",

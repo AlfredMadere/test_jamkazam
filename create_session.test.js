@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const helpers = require('./helper_functions.js');
+
 
 const user = {
 	username: "Alfred Madere",
@@ -6,16 +8,7 @@ const user = {
 	password: "YCm@n88zUDYhWCx"
 };
 
-async function signIn(page) {
-  await page.waitForSelector('a.join-today');
-  await page.click('a.sign-in');
-  await page.waitForSelector('#session_email');
-  await page.type('#session_email', user.email);
-  await page.type('#session_password', user.password);
-  await page.click('[value="SIGN IN"]');
-  await page.waitForSelector('div.userinfo div.arrow-down');
 
-};
 describe('create session', () => {
 	jest.setTimeout(300000);
   beforeEach(async () => {
@@ -23,9 +16,10 @@ describe('create session', () => {
     await page.goto(app);
   });
 
-  it('Can quick start solo', async() => {
-    await signIn(page);
-    await page.click('div.homecard.createsession');
+  it('Can quick start solo session', async() => {
+    await helpers.ensureLoggedIn(page);
+    await page.waitForSelector('div.homecard.createsession.logged-in');
+    await page.click('div.homecard.createsession.logged-in');
     await page.click('a.quick-start-solo');
     await page.waitForSelector('div.launch-buttons');
    });
