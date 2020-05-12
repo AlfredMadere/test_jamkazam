@@ -2,7 +2,7 @@
 const any = require('promise.any');
 
 async function isLoggedIn(page){
-	const loggedInElement = 'div.user';
+	const loggedInElement = 'div.homecard.account.logged-in';
 	const loggedOutElement = '[href="/signin"]';
 	let loggedInPromise = page.waitForSelector(loggedInElement)
 							.then(() => true).catch(() => false);
@@ -14,25 +14,27 @@ async function isLoggedIn(page){
 };
 
 async function ensureLoggedOut(page){
+	await page.goto('https://www.jamkazam.com/client#/home');
 	if(await isLoggedIn(page)){
 		await logOut(page); 
 	};
 };
 
 async function ensureLoggedIn(page){
+	await page.goto('https://www.jamkazam.com/client#/home');
 	if(!(await isLoggedIn(page))){
 		await logIn(page); 
 	};
 };
 
 async function logIn(page) {
-  await page.waitForSelector('[href="/signin"]');
-  await page.click('[href="/signin"]');
-  await page.waitForSelector('#session_email');
-  await page.type('#session_email', userWithAccount.email);
-  await page.type('#session_password', userWithAccount.password);
-  await page.click('[value="SIGN IN"]');
-  await page.waitForSelector('div.userinfo');
+	await page.waitForSelector('[href="/signin"]');
+	await page.click('[href="/signin"]');
+	await page.waitForSelector('#session_email');
+	await page.type('#session_email', userWithAccount.email);
+	await page.type('#session_password', userWithAccount.password);
+	await page.click('[value="SIGN IN"]');
+	await page.waitForSelector('div.userinfo');
 
 };
 
