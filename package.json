@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "promise.any": "",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "faker": "^4.1.0",
     "jest": "^25.2.7",
     "jest-puppeteer": "^4.4.0",
