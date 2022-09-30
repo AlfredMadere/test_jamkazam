@@ -47,7 +47,7 @@ async function logOut(page) {
 const userWithAccount = {
 	username: "Alfred Madere",
 	email: "alfred@stevemadere.com",
-	password: "YCm@n88zUDYhWCx"
+	password: "YCm@n88zUDYhWCx" // bogus credentials
 };
 
 module.exports = {isLoggedIn: isLoggedIn,
